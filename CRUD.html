@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CRUD Application</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-9">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User Name</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="myTable"></tbody>
+        </table>
+      </div>
+      <div class="col-md-3">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">ID</label>
+            <input
+              type="text"
+              class="form-control"
+              id="id"
+              placeholder="Enter ID"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">User Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Enter User name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+            />
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="updateuser()">
+            Submit
+          </button>
+          <button type="button" class="btn btn-primary" onclick="createuser()">
+            Create
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="read.js"></script>
+    <script src="update.js"></script>
+    <script src="delete.js"></script>
+    <script src="create.js"></script>
+  </body>
+</html>
