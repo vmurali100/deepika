@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      var person = {
+        fname: "Murali",
+        lname: "Krishna",
+        email: "vmurali100@gmail.com",
+        city: "Address"
+      };
+      person.area = "Whitefield";
+      person["state"] = "Karnataka";
+
+      var movie = {
+        name: "MovieName",
+        hero: "HeroName",
+        language: "Tamil"
+      };
+
+      //   document.write(
+      //     person.fname + "<br>" + person.lname + "<br>" + person.email
+      //   );
+      var results = "";
+      for (a in person) {
+        console.log(person[a]);
+        results = results + person[a] + "<br>";
+      }
+      document.getElementById("demo").innerHTML = results;
+      console.log(person);
+    </script>
+  </body>
+</html>
