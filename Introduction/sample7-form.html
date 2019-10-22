@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      li {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="fname">First name : </label>
+      <input type="text" id="fname" />
+      <br />
+      <label for="lname">Last name : </label>
+      <input type="text" id="lname" />
+      <br />
+      <button type="button" onclick="getData()">Get Data</button>
+      <hr />
+
+      <ul id="myUl"></ul>
+    </form>
+
+    <script>
+      function getData() {
+        var inputValue1 = document.getElementById("fname").value;
+        var inputValue2 = document.getElementById("lname").value;
+
+        var myLi = document.createElement("li");
+        myLi.innerHTML = inputValue1 + " - " + inputValue2;
+        document.getElementById("myUl").appendChild(myLi);
+        clearForm();
+      }
+
+      function clearForm() {
+        document.getElementById("fname").value = "";
+        document.getElementById("lname").value = "";
+      }
+    </script>
+  </body>
+</html>

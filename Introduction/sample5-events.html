@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="showWelcome()">Click</button>
+    <h1
+      onmouseover="changeHeadingColor()"
+      id="myHeading"
+      onmouseout="changeColorBack()"
+    >
+      Hello
+    </h1>
+    <select name="" id="mySelect" onchange="getSelectdValue()">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <input
+      type="text"
+      onfocus="changeFocusColor()"
+      id="myInput"
+      onblur="changeBack()"
+    />
+
+    <script>
+      function showWelcome() {
+        alert("You Have Clicked on this Button");
+      }
+
+      function changeHeadingColor() {
+        document.getElementById("myHeading").style.color = "red";
+      }
+
+      function changeColorBack() {
+        document.getElementById("myHeading").style.color = "";
+      }
+
+      function getSelectdValue() {
+        var selectedValue = document.getElementById("mySelect").value;
+        console.log(selectedValue);
+      }
+
+      function changeFocusColor() {
+        document.getElementById("myInput").style.background = "grey";
+      }
+
+      function changeBack() {
+        document.getElementById("myInput").style.background = "";
+      }
+    </script>
+  </body>
+</html>
