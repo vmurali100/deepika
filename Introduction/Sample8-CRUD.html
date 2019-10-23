@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="fname">First name : </label>
+      <input type="text" id="fname" />
+      <br />
+      <label for="lname">Last name : </label>
+      <input type="text" id="lname" />
+      <br />
+      <button type="button" onclick="getData()">Get Data</button>
+      <button type="button" onclick="update()">Update</button>
+    </form>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="myTable"></tbody>
+    </table>
+    <script>
+      var allUsers = [
+        {
+          fname: "Susan",
+          lname: "Schade"
+        },
+        {
+          fname: "Norman",
+          lname: "Mooney"
+        },
+        {
+          fname: "Constance",
+          lname: "Duffy"
+        }
+      ];
+
+      function getData() {
+        var obj = {
+          fname: document.getElementById("fname").value,
+          lname: document.getElementById("lname").value
+        };
+        allUsers.push(obj);
+        displayData(allUsers);
+      }
+
+      function clearForm() {
+        document.getElementById("fname").value = "";
+        document.getElementById("lname").value = "";
+      }
+
+      function displayData(allUsers) {
+        document.getElementById("myTable").innerHTML = "";
+        for (i = 0; i < allUsers.length; i++) {
+          var myTr = document.createElement("tr");
+
+          var td1 = document.createElement("td");
+          td1.innerHTML = allUsers[i].fname;
+          myTr.appendChild(td1);
+
+          var td2 = document.createElement("td");
+          td2.innerHTML = allUsers[i].lname;
+          myTr.appendChild(td2);
+
+          var td3 = document.createElement("td");
+          var editButton = document.createElement("button");
+          editButton.innerHTML = "Edit";
+          editButton.setAttribute("onclick", "editUser(" + i + ")");
+          td3.appendChild(editButton);
+          myTr.appendChild(td3);
+
+          var td4 = document.createElement("td");
+          var deleteBtn = document.createElement("button");
+          deleteBtn.innerHTML = "Delete";
+          deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+          td4.appendChild(deleteBtn);
+          myTr.appendChild(td4);
+
+          document.getElementById("myTable").appendChild(myTr);
+          clearForm();
+        }
+      }
+      displayData(allUsers);
+
+      function editUser(i) {
+        index = i;
+        document.getElementById("fname").value = allUsers[i].fname;
+        document.getElementById("lname").value = allUsers[i].lname;
+      }
+
+      function deleteUser(i) {
+        allUsers.splice(i, 1);
+        displayData(allUsers);
+      }
+
+      function update() {
+        var obj = {
+          fname: document.getElementById("fname").value,
+          lname: document.getElementById("lname").value
+        };
+        allUsers[index] = obj;
+        displayData(allUsers);
+        clearForm();
+      }
+    </script>
+  </body>
+</html>
