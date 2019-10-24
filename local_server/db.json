@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "fname": "Susan",
+      "lname": "Schade"
+    },
+    {
+      "fname": "Norman",
+      "lname": "Mooney"
+    },
+    {
+      "fname": "Constance",
+      "lname": "Duffy"
+    }
+  ]
+}
