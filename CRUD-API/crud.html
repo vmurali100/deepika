@@ -7,16 +7,44 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="text" placeholder="Search User" />
+    <!-- <input type="text" placeholder="Search User" />
     <select name="" id="">
       <option value="">Murali</option>
       <option value="">Krishna</option>
-    </select>
+    </select> -->
+
+    <form>
+      <label>First Name : </label>
+      <input type="text" name="" id="fname" /> <br />
+      <label>First Name : </label>
+      <input type="text" name="" id="lname" /> <br />
+      <br />
+      <label for="gender">Gender</label>
+      <input type="radio" name="gender" id="" /> Male
+      <input type="radio" name="gender" id="" />Female
+      <br />
+      <br />
+      <label for="subject">Subjects</label>
+      <input type="checkbox" name="subject" id="" value="HTML 5" />HTML 5
+      <input type="checkbox" name="subject" id="" value="CSS 3" />CSS3
+      <input
+        type="checkbox"
+        name="subject"
+        id=""
+        value="Javascript"
+      />Javascript
+      <input type="checkbox" name="subject" id="" value="Angular" />Angular
+      <br /><br />
+      <button type="button" onclick="addUser()">Add User</button>
+      <button type="button" onclick="updateUser()">Update</button>
+    </form>
     <table border="1">
       <thead>
         <tr>
           <th>First Name</th>
           <th>Last Name</th>
+          <th>Gender</th>
+          <th>Subjects</th>
           <th>Edit</th>
           <th>Delete</th>
         </tr>
