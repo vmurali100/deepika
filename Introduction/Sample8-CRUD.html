@@ -52,8 +52,9 @@
         allUsers.push(obj);
         displayData(allUsers);
       }
-
+      //How this clear form is getting used
       function clearForm() {
+        //Why empty Quotes are gettingused here ?
         document.getElementById("fname").value = "";
         document.getElementById("lname").value = "";
       }
@@ -74,6 +75,7 @@
           var td3 = document.createElement("td");
           var editButton = document.createElement("button");
           editButton.innerHTML = "Edit";
+          //WHy i is usef with ++ symbols ?
           editButton.setAttribute("onclick", "editUser(" + i + ")");
           td3.appendChild(editButton);
           myTr.appendChild(td3);

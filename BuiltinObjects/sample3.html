@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      h1#cTime {
+        text-align: center;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="cTime">00:00</h1>
+    <script>
+      function getCurrentTime() {
+        var todaysDate = new Date();
+        document.getElementById(
+          "cTime"
+        ).innerHTML = todaysDate.toLocaleTimeString();
+      }
+      //   getCurrentTime();
+      setInterval(function() {
+        getCurrentTime();
+      }, 1000);
+    </script>
+  </body>
+</html>

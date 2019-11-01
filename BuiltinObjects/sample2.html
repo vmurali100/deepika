@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="myUl"></ul>
+    <script>
+      var friends = ["ram", "ravi", "krishna"];
+      function display() {
+        for (i = 0; i < friends.length; i++) {
+          var li = document.createElement("li");
+          var anchor = document.createElement("a");
+          anchor.setAttribute(
+            "href",
+            "frinendsDetails.html?info/" + friends[i]
+          );
+          anchor.innerHTML = friends[i];
+          li.appendChild(anchor);
+          document.getElementById("myUl").appendChild(li);
+        }
+      }
+      display();
+    </script>
+  </body>
+</html>
