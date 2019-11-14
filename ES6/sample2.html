@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var users = [
+        { fname: "Murali", age: 40, contact: 9663856635 },
+        { fname: "Murali K", age: 20, contact: 9663856635 },
+        { fname: "Ram", age: 30, contact: 9663856635 },
+        { fname: "Ravi", age: 50, contact: 9663856635 }
+      ];
+
+      // Es5
+      //   for (i = 0; i < users.length; i++) {
+      //     if (users[i].age == 20) {
+      //       console.log(users[i]);
+      //     }
+      //   }
+
+      // Es6
+      //Map statement  will loop through and return An Array
+      //   let fiteredUsers = users.map(user => {
+      //     return user;
+      //   });
+
+      //forEach will loop through only , It wont return An array
+      //   let fiteredUsers = users.forEach(user => {
+      //     return user;
+      //   });
+
+      //Find Method will return the First Match Object
+      //   let filteredUser = users.find(user => {
+      //     return user.age == 20;
+      //   });
+
+      // filter will return all match Objects
+      //   let filteredUser = users.filter(user => {
+      //     return user.age == 20;
+      //   });
+
+      console.log(fiteredUsers);
+    </script>
+  </body>
+</html>
