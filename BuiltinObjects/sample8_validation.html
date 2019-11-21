@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="fname">First Name : </label>
+      <input type="text" name="" id="fname" /><br />
+      <label for="lname">Last Name : </label>
+      <input type="text" name="" id="lname" /><br />
+      <label for="email">Email : </label>
+      <input type="text" name="" id="email" />
+      <button onclick="addUser()" type="button">Add User</button>
+    </form>
+    <script>
+      function addUser() {
+        var check;
+        var person = {
+          fname: "",
+          lname: "",
+          email: ""
+        };
+
+        for (a in person) {
+          if (a !== "email") {
+            if (document.getElementById(a).value == "") {
+              check = true;
+            }
+          } else {
+            var pattern = /\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/;
+
+            var emailValue = document.getElementById(a).value;
+            if (!pattern.test(emailValue)) {
+              check = true;
+            }
+          }
+        }
+
+        if (check) {
+          alert("Please Enter All the values ");
+        } else {
+          for (a in person) {
+            person[a] = document.getElementById(a).value;
+          }
+
+          console.log(person);
+        }
+      }
+    </script>
+  </body>
+</html>
