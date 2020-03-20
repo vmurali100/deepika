@@ -1,13 +1,24 @@
 <p>user works!</p>
 <form #userForm="ngForm">
   <label for="fname">First Name : </label>
-  <input type="text" ngModel name="fname" /> <br />
+  <input type="text" ngModel name="fname" required /> <br />
   <label for="lname">Last Name :</label>
-  <input type="text" ngModel name="lname" /> <br />
-  <button type="button" (click)="addUser(userForm)">Add User</button>
+  <input type="text" ngModel name="lname" required /> <br />
+  <input type="text" ngModel name="id" hidden />
+  <button
+    type="button"
+    (click)="addUser(userForm)"
+    *ngIf="!isEdit"
+    [disabled]="userForm.invalid"
+  >
+    Add User
+  </button>
+  <button *ngIf="isEdit" (click)="updateUser(userForm)">Update User</button>
 </form>
 <ul>
   <li *ngFor="let user of users">
     {{ user.fname }} <button (click)="deleteUser(user)">Delete</button>
+    <button (click)="editUser(userForm, user)">Edit</button>
   </li>
 </ul>
+{{ userForm.invalid }}
