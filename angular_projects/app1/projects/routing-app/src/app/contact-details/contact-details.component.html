@@ -1,0 +1,13 @@
+<div *ngIf="selectedContact">
+  <p>First Name : {{ selectedContact.fname }}</p>
+  <p>Last Name : {{ selectedContact.lname }}</p>
+  <p>Tel : {{ selectedContact.tel }}</p>
+  <p>Address : {{ selectedContact.address }}</p>
+  <p>City Name : {{ selectedContact.city }}</p>
+  <p>State Name : {{ selectedContact.state }}</p>
+  <p>Zip : {{ selectedContact.zip }}</p>
+</div>
+
+<button class="btn btn-primary" routerLink="/contact">
+  Go Back TO Contacts
+</button>

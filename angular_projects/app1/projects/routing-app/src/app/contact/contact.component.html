@@ -1,1 +1,10 @@
 <p>contact works!</p>
+
+<ul>
+  <li
+    *ngFor="let contact of contacts"
+    [routerLink]="['/contact', contact.fname]"
+  >
+    {{ contact.fname | lowercase }}
+  </li>
+</ul>
